@@ -1,13 +1,4 @@
 function updateTime() {
-  let sydneyElement = document.querySelector("#sydney");
-  let sydneyDateElement = sydneyElement.querySelector(".date");
-  let sydneyTimeElement = sydneyElement.querySelector(".time");
-  let sydneyLocalTime = moment().tz("Australia/Sydney");
-  sydneyDateElement.innerHTML = sydneyLocalTime.format("MMMM Do YYYY");
-  sydneyTimeElement.innerHTML = sydneyLocalTime.format(
-    "hh:mm:ss [<small>]A[</small>]"
-  );
-
   let brusselsElement = document.querySelector("#brussels");
   let brusselsDateElement = brusselsElement.querySelector(".date");
   let brusselsTimeElement = brusselsElement.querySelector(".time");
@@ -25,6 +16,23 @@ function updateTime() {
   newYorkTimeElement.innerHTML = newYorkLocalTime.format(
     "hh:mm:ss [<small>]A[</small>]"
   );
+  let tokyoElement = document.querySelector("#tokyo");
+  let tokyoDateElement = tokyoElement.querySelector(".date");
+  let tokyoTimeElement = tokyoElement.querySelector(".time");
+  let tokyoLocalTime = moment().tz("Asia/Tokyo");
+  tokyoDateElement.innerHTML = tokyoLocalTime.format("MMMM Do YYYY");
+  tokyoTimeElement.innerHTML = tokyoLocalTime.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
+
+  let sydneyElement = document.querySelector("#sydney");
+  let sydneyDateElement = sydneyElement.querySelector(".date");
+  let sydneyTimeElement = sydneyElement.querySelector(".time");
+  let sydneyLocalTime = moment().tz("Australia/Sydney");
+  sydneyDateElement.innerHTML = sydneyLocalTime.format("MMMM Do YYYY");
+  sydneyTimeElement.innerHTML = sydneyLocalTime.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
 }
 
 function updateCity(event) {
@@ -40,11 +48,14 @@ function updateCity(event) {
       <div>
         <h2>${selectedCityName}</h2>
         <div class="date">${selectedCityTime.format("MMMM Do YYYY")}</div>
+        <a href="/">Back to all cities</a>
       </div>
       <div class="time">${selectedCityTime.format(
         "hh:mm:ss"
       )}<small>${selectedCityTime.format("A")}</small></div>
-    </div> `;
+      
+    </div> 
+    `;
 }
 
 updateTime;
